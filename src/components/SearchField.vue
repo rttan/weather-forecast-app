@@ -1,6 +1,5 @@
 <template>
    <div class="py-10">
-      result <pre>{{ result}}</pre>
 
     <div class="w-full flex justify-center md:px-24">
         <input class="w-full px-4 py-2 rounded-full border border-gray-700" type="text" placeholder="Type the city" v-model="country">
@@ -13,7 +12,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import Axios from "axios";
 export default {
     data(){
         return{
@@ -22,31 +21,25 @@ export default {
             btn: "Display Weather",
             myApi:'64bb5f6f2a82ee784b144d397d552aac',
             limit: 5,
+            emptyMessage:"Please key in the city"
         }
     },
     methods:{
         searchBtn(){
             if(!this.country){
-                alert("Please key in the city")
+               this.$alert(this.emptyMessage.toUpperCase());
             }else{
                 // reference URL: api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid={API key}
-                axios.get("http://api.openweathermap.org/data/2.5/weather?q="+this.country+"&limit="+this.limit+"&appid="+this.myApi).then((res)=>{
-                    this.result = res.data; 
-                    // if(res.data){
-                    //     this.result = res.data;
-                    // }else{
-                    //     console.log("NO data")
-                    // }
-                }).catch(function (error) {
-                    if (error.response) {
-                    console.log("data",error.response.data);
-                    console.log("status",error.response.status);
-                    console.log("headers",error.response.headers);
-                    
+                Axios.get("http://api.openweathermap.org/data/2.5/weather?q="+this.country+"&limit="+this.limit+"&appid="+this.myApi).then((res)=>{
+                   this.$router.push({name:"Search Result", params:{
+                       result:res.data
+                   }})
+                }).catch((error)=> {
+                    console.log("error", error.response.data)
+                    if(error.response.data.cod==404){
+                        this.$alert(error.response.data.message.toUpperCase());
                     }
                 })
-
-                
             }
         }
     }
