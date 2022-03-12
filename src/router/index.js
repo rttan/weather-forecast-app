@@ -1,5 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { getInstance } from "../auth";
+
 Vue.use(VueRouter);
 /* eslint-disable */
 
@@ -9,6 +11,9 @@ const routes = [{
         name: "Login",
         component: () =>
             import ("@/components/LoginPage"),
+        meta: {
+            requireAuth: false
+        }
 
     },
     {
@@ -17,6 +22,9 @@ const routes = [{
         name: "Search",
         component: () =>
             import ("@/components/SearchField"),
+        meta: {
+            requireAuth: true
+        }
 
     },
     {
@@ -25,6 +33,9 @@ const routes = [{
         name: "Search Result",
         component: () =>
             import ("@/components/SearchResult"),
+        meta: {
+            requireAuth: true
+        }
 
     }
 ];
@@ -32,5 +43,17 @@ const routes = [{
 const router = new VueRouter({
     routes,
 });
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requireAuth) {
+        if (getInstance().isAuthenticated) {
+            next();
+        } else {
+            next({ name: "Login" })
+        }
+    } else {
+        next();
+    }
+})
 
 export default router;
