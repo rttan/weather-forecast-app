@@ -11,7 +11,7 @@
         class="w-full px-4 py-2 rounded-full border border-gray-700"
         type="text"
         placeholder="City"
-        v-model="country"
+        v-model="city"
       />
     </div>
     <div class="flex justify-center py-4">
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       result: [],
-      country: null,
+      city: null,
       btn: "Display Weather",
 
       emptyMessage: "Please key in the city",
@@ -45,13 +45,13 @@ export default {
   },
   methods: {
     searchBtn() {
-      if (!this.country) {
+      if (!this.city) {
         this.$alert(this.emptyMessage.toUpperCase());
       } else {
         this.$router.push({
           name: "Search Result",
           query: {
-            country: this.country,
+            city: this.city,
           },
         });
         // reference URL: api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid={API key}

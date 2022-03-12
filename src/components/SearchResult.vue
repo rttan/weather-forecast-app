@@ -128,10 +128,10 @@ export default {
     TableCell,
   },
   watch: {
-    "$route.query.country": {
-      handler(country) {
-        if (country) {
-          this.getWeatherForecast(country).then((res) => {
+    "$route.query.city": {
+      handler(city) {
+        if (city) {
+          this.getWeatherForecast(city).then((res) => {
             console.log("watch e", res.data);
             this.temp = res.data.main.temp;
             this.description = res.data.weather[0].description;
@@ -153,10 +153,10 @@ export default {
     back(){
       this.$router.push({name:"Search"})
     },
-    getWeatherForecast(country) {
+    getWeatherForecast(city) {
       return Axios.get(
         "http://api.openweathermap.org/data/2.5/weather?q=" +
-          country +
+          city +
           "&limit=" +
           this.limit +
           "&appid=" +
