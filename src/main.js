@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import './input.css'
 import router from "./router";
-import VueSimpleAlert from "vue-simple-alert";
+import VueSimpleAlert from "vue-simple-alert"; //source https://vuejsexamples.com/simple-alert-for-vue-js/
 // Import the Auth0 configuration
 import { domain, clientId } from "../auth_config.json";
 
