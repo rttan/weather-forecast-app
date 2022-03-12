@@ -1,16 +1,16 @@
 <template>
   <div class="py-10">
-    <div>
-      <div>
+    <div class="py-10">
+      <div class="md:text-3xl text-center text-3xl font-bold">
         {{ $auth.user.name }}
       </div>
-      <div>https://github.com/{{ $auth.user.nickname }}</div>
+      <div class="text-center font-thin ">https://github.com/{{ $auth.user.nickname }}</div>
     </div>
     <div class="w-full flex justify-center md:px-24">
       <input
         class="w-full px-4 py-2 rounded-full border border-gray-700"
         type="text"
-        placeholder="Type the city"
+        placeholder="City"
         v-model="country"
       />
     </div>

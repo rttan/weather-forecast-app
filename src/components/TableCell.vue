@@ -1,5 +1,5 @@
 <template>
-  <div :class="{hidden:hideMobile?true:false}" class="md:block flex-1 md:bg-gray-100 border border-gray-700">
+  <div :class="{hidden:hideMobile?true:false}" class="md:block flex-1 md:bg-gray-100 border border-gray-700 pl-2 py-2">
     {{text}}
   </div>
 </template>
