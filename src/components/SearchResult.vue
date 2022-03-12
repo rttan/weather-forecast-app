@@ -67,7 +67,7 @@
     <!-- data content  -->
     <!-- component can be found in components/TableCell.vue  -->
     <div class="flex border-2 border-gray-500">
-      <TableCell :text="moment(dt)"></TableCell>
+      <TableCell :text="formatDate(dt)"></TableCell>
       <TableCell :text="main"></TableCell>
       <TableCell :hideMobile="true" :text="temp"></TableCell>
       <TableCell :hideMobile="true" :text="description"></TableCell>
@@ -147,8 +147,8 @@ export default {
   },
 
   methods: {
-    moment(d){
-      return moment(d).format("L")
+    formatDate(d){
+      return moment.unix(d).format("L")
     }, 
     back(){
       this.$router.push({name:"Search"})
