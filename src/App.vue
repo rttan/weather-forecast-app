@@ -1,28 +1,20 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld class="bg-red-900"/>
+  <div id="app" class="px-4">
+    <TopBar />
+    <!-- <LoginPage /> -->
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import LoginPage from './components/LoginPage.vue'
+import TopBar from './components/TopBar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // LoginPage,
+    TopBar
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
