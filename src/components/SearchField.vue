@@ -1,5 +1,11 @@
 <template>
   <div class="py-10">
+    <div>
+      <div>
+        {{ $auth.user.name }}
+      </div>
+      <div>https://github.com/{{ $auth.user.nickname }}</div>
+    </div>
     <div class="w-full flex justify-center md:px-24">
       <input
         class="w-full px-4 py-2 rounded-full border border-gray-700"
@@ -33,7 +39,7 @@ export default {
       result: [],
       country: null,
       btn: "Display Weather",
-   
+
       emptyMessage: "Please key in the city",
     };
   },
@@ -49,7 +55,6 @@ export default {
           },
         });
         // reference URL: api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid={API key}
-       
       }
     },
   },
