@@ -27,15 +27,13 @@
 </template>
 
 <script>
-import Axios from "axios";
 export default {
   data() {
     return {
       result: [],
       country: null,
       btn: "Display Weather",
-      myApi: "64bb5f6f2a82ee784b144d397d552aac",
-      limit: 5,
+   
       emptyMessage: "Please key in the city",
     };
   },
@@ -51,21 +49,7 @@ export default {
           },
         });
         // reference URL: api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid={API key}
-        Axios.get(
-          "http://api.openweathermap.org/data/2.5/weather?q=" +
-            this.country +
-            "&limit=" +
-            this.limit +
-            "&appid=" +
-            this.myApi
-        )
-          .then((res) => {})
-          .catch((error) => {
-            console.log("error", error.response.data);
-            if (error.response.data.cod == 404) {
-              this.$alert(error.response.data.message.toUpperCase());
-            }
-          });
+       
       }
     },
   },
