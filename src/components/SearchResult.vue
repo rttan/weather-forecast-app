@@ -13,6 +13,13 @@
            {{ item.title }}
         </div>
     </div>
+
+    <!-- data content  -->
+    <div class="flex border-2 border-gray-500 md:mx-10">
+        <div v-for="(item,i) in headers" :key="i" class="md:bg-gray-100 w-full border border-gray-700 md:px-10 px-4">
+           {{ item.title }}
+        </div>
+    </div>
   </div>
 </template>
 
