@@ -65,6 +65,7 @@
       </div>
     </div>
     <!-- data content  -->
+    <!-- component can be found in components/TableCell.vue  -->
     <div class="flex border-2 border-gray-500">
       <TableCell :text="moment(dt)"></TableCell>
       <TableCell :text="main"></TableCell>
