@@ -1,5 +1,8 @@
 <template>
   <div>
+      <pre>
+          {{ $route.params}}
+      </pre>
       <!-- main title  -->
     <div v-html="title" class="text- text-3xl text-center py-10">
     </div>
@@ -37,6 +40,7 @@ export default {
             ]
        }
    },
+
 }
 </script>
 
