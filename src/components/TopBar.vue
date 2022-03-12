@@ -11,7 +11,10 @@
   >
     <!-- dynamic title  -->
     <div class="text-left w-1/2 text-2xl">
-      {{ mainTitle }}
+      <div class="flex items-center">
+        <img src="@/assets/logo.png" alt="cloud" class="w-12" />
+        {{ mainTitle }}
+      </div>
     </div>
 
     <!-- logout | shown when not login -->
