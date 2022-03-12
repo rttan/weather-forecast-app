@@ -19,7 +19,7 @@
               md:w-1/2
             "
           >
-            LOGIN
+            {{ btnLoginTitle }}
           </button>
         </div>
       </div>
@@ -30,6 +30,7 @@
 export default {
   data() {
     return {
+      btnLoginTitle:"LOGIN",
       loginTitle:
         "Welcome to the weather forecast web application. Please login with your Github user to use the application and view the weather in your city",
     };  
