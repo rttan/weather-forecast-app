@@ -1,2 +1,2 @@
-# weather-forecast-vuejs
-Weather Forecast using Vuejs
+# weather-forecast-app
+Weather Forecast App using Vuejs
