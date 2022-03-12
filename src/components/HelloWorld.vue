@@ -1,5 +1,5 @@
 <template>
   <div>
-    sample VUEJS
+    VUEJS
   </div>
 </template>
