@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="py-10 flex justify-center text-xl">
-      <div class="md:px-24 w-full">
+    <div class="py-10 flex justify-center text-center text-xl md:text-3xl">
+      <div class="md:px-24 w-full font-thin">
         {{ loginTitle }}
         <div class="flex justify-center py-10">
           <button
@@ -9,6 +9,7 @@
             class="
               hover:bg-blue-500
               focus:border focus:border-gray-700
+              focus:bg-blue-900
               bg-blue-400
               px-4
               py-2
@@ -31,7 +32,7 @@ export default {
     return {
       loginTitle:
         "Welcome to the weather forecast web application. Please login with your Github user to use the application and view the weather in your city",
-    };
+    };  
   },
   watch: {
     "$auth.user": {
